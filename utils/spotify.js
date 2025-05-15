@@ -8,7 +8,6 @@ const moodMap = {
 
 
 async function getPlaylistForMood(mood) {
-    console.log({ mood })
     const playlistId = moodMap[mood] || moodMap["relaxed"];
     return `https://open.spotify.com/embed/playlist/${playlistId}`;
 }

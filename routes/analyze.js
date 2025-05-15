@@ -12,7 +12,6 @@ router.post('/', async (req, res) => {
 
         res.json({ mood, tone, tags, playlistUrl });
     } catch (error) {
-        console.log({ error })
         const errMsg = error?.error?.message;
         res.status(500).json({ error: errMsg || 'Something went wrong.' });
     }

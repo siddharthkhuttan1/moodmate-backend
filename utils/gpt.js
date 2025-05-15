@@ -17,15 +17,12 @@ async function analyzeEntry(entry) {
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: prompt }],
     });
-    console.log({ response })
 
 
     const reply = response.choices[0].message.content;
-    console.log({ reply })
 
     try {
         const result = JSON.parse(reply);
-        console.log({ result })
         return result;
     } catch (e) {
         const [mood, tone, ...tags] = reply.match(/\w+/g);
